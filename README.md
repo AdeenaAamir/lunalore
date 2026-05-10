@@ -12,6 +12,3 @@ LunaLore is a book discovery website developed using HTML, CSS, and JavaScript. 
 - Book of the Month
 - Reader reviews
 - Registration form
-
-## Run locally
-Open index.html in your browser.
