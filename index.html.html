@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LunaLore</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #0e1a2b; /* Deep blue background */
+            margin: 0;
+            padding: 0;
+            color: #D4AF37; /* Dark gold text color */
+        }
+
+        header {
+            background: url('banner.png') no-repeat center center/cover; /* Hero image */
+            color: #D4AF37; /* Dark gold text */
+            text-align: center;
+            padding: 4rem 1rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin: 0;
+        }
+
+        nav {
+            background: #1c2a3a; /* Muted deep blue */
+            display: flex;
+            justify-content: center;
+            padding: 1rem 0;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #D4AF37; /* Dark gold links */
+            font-size: 1.2rem;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+            color: #f0e68c; /* Brighter gold on hover */
+        }
+
+        .bookshelf {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 2rem;
+        }
+
+        .book {
+            background: #1c2a3a; /* Muted deep blue */
+            border: 1px solid #D4AF37; /* Dark gold border */
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+            width: 200px;
+            text-align: center;
+            padding: 1rem;
+            cursor: pointer;
+        }
+
+        .book img {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        .book:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
+        }
+
+        .book h3 {
+            font-size: 1.2rem;
+            margin: 0.5rem 0;
+            color: #D4AF37; /* Dark gold for headings */
+        }
+
+        .book-list {
+            display: none;
+            background: #1c2a3a; /* Muted deep blue */
+            color: #D4AF37; /* Dark gold */
+            border: 1px solid #D4AF37;
+            border-radius: 10px;
+            padding: 1rem;
+            margin-top: 10px;
+            text-align: left;
+        }
+
+        footer {
+            background: #2b3e50; /* Deep blue */
+            color: #D4AF37; /* Dark gold text */
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+
+        footer a {
+            color: #D4AF37; /* Dark gold for links */
+            text-decoration: underline;
+        }
+
+        .register-form {
+            background: #1c2a3a; /* Muted deep blue */
+            border: 1px solid #D4AF37; /* Dark gold border */
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 2rem auto;
+            width: 300px;
+            text-align: center;
+        }
+
+        .register-form input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #D4AF37;
+            border-radius: 5px;
+            background-color: #0e1a2b;
+            color: #D4AF37;
+        }
+
+        .register-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #D4AF37;
+            color: #0e1a2b;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .register-form button:hover {
+            background-color: #f0e68c;
+        }
+
+        .register-form p {
+            color: #D4AF37;
+        }
+
+        #spotlight {
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+
+        #spotlight .book {
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to LunaLore</h1>
+    </header>
+
+    <nav>
+        <a href="#categories">Genre</a>
+        <a href="#spotlight">Book of the Month</a>
+        <a href="#reviews">Reader Reviews</a>
+        <a href="#contact">Contact Us</a>
+        <a href="#register">Register</a>
+    </nav>
+
+    <section class="bookshelf" id="categories">
+        <div class="book" onclick="toggleBookList('fantasyList')">
+            <img src="acotar.png" alt="Fantasy Book Cover">
+            <h3>Fantasy</h3>
+            <div class="book-list" id="fantasyList">
+                <p>- A Court of Thorns and Roses</p>
+                <p>- Throne of Glass</p>
+                <p>- The Cruel Prince</p>
+            </div>
+        </div>
+        <div class="book" onclick="toggleBookList('romanceList')">
+            <img src="bttm.png" alt="Romance Book Cover">
+            <h3>Rom-Coms</h3>
+            <div class="book-list" id="romanceList">
+                <p>- The Hating Game</p>
+                <p>- Beach Read</p>
+                <p>- People We Meet on Vacation</p>
+            </div>
+        </div>
+        <div class="book" onclick="toggleBookList('thrillerList')">
+            <img src="sp.png" alt="Mystery Book Cover">
+            <h3>Thrillers</h3>
+            <div class="book-list" id="thrillerList">
+                <p>- The Silent Patient</p>
+                <p>- Gone Girl</p>
+                <p>- The Girl on the Train</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="spotlight">
+        <header>
+            <h2 style="color: #D4AF37;">Book of the Month</h2>
+        </header>
+        <div class="book">
+            <img src="cp.png" alt="Featured Book Cover">
+            <h3>The Cruel Prince</h3>
+        </div>
+    </section>
+
+<section id="reviews" style="text-align: center;">
+        <header>
+            <h2 style="color: #D4AF37;">Reader Reviews</h2>
+        </header>
+        <p>Zara16: "An absolutely enchanting site for book lovers!"</p>
+        <p>Alison Paige: "I found my next favorite read here!"</p>
+        <p>Alina Khan: "Very user-friendly library!"</p>
+        <p>MaxPax: "This E-library is all a reader needs."</p>
+    </section>
+
+    <section id="register">
+        <div class="register-form">
+            <h3>Register for Updates</h3>
+            <p>Sign up to receive notifications on new book releases and updates!</p>
+            <form action="#">
+                <input type="text" name="name" placeholder="Enter your name" required>
+                <input type="email" name="email" placeholder="Enter your email" required>
+                <input type="password" name="password" placeholder="Create a password" required>
+                <label>
+                    <input type="checkbox" name="subscribe" checked> Subscribe for updates
+                </label>
+                <button type="submit">Register</button>
+            </form>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <p>Connect with us: <a href="mailto:info@booknook.com">info@LunaLore.com</a></p>
+        <p>&copy; 2025 LunaLore</p>
+    </footer>
+
+    <script>
+        function toggleBookList(listId) {
+            const list = document.getElementById(listId);
+            if (list.style.display === 'none' || list.style.display === '') {
+                list.style.display = 'block';
+            } else {
+                list.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
